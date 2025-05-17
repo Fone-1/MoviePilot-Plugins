@@ -7,6 +7,7 @@ from transmission_rpc import Client
 from urllib.parse import urlparse
 from datetime import datetime, timedelta
 
+from app.plugins import _PluginBase
 from app.chain import ChainBase
 from app.log import logger
 from app.core.config import settings
@@ -25,7 +26,7 @@ class PluginChian(ChainBase):
     pass
 
 
-class TrackerLimit(metaclass=ABCMeta):
+class TrackerLimit(_PluginBase):
     """
     插件模块基类，通过继续该类实现插件功能
     除内置属性外，还有以下方法可以扩展或调用：
